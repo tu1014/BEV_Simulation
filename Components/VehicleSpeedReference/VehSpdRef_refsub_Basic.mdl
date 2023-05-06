@@ -43,9 +43,9 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
   <cp:category>subsystem</cp:category>
   <dcterms:created xsi:type="dcterms:W3CDTF">2023-02-09T11:05:38Z</dcterms:created>
   <dc:creator>isaacito</dc:creator>
-  <cp:lastModifiedBy>isaacito</cp:lastModifiedBy>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-03-17T13:20:03Z</dcterms:modified>
-  <cp:revision>2.0</cp:revision>
+  <cp:lastModifiedBy>antaeug</cp:lastModifiedBy>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-05-06T11:18:36Z</dcterms:modified>
+  <cp:revision>2.10</cp:revision>
   <cp:version>R2023a</cp:version>
 </cp:coreProperties>
 
@@ -107,11 +107,11 @@ __MWOPC_PART_BEGIN__ /simulink/blockdiagram.xml
 <ModelInformation Version="1.0">
   <Subsystem>
     <P Name="ModelUUID">81021486-11cd-4062-bb2f-8ccef393a5d2</P>
-    <P Name="LastSavedArchitecture">win64</P>
+    <P Name="LastSavedArchitecture">maci64</P>
     <ConfigManagerSettings>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="ModelVersionFormat">%&lt;AutoIncrement:2.0&gt;</P>
+      <P Name="ModelVersionFormat">%&lt;AutoIncrement:2.10&gt;</P>
     </ConfigManagerSettings>
     <SimulationSettings>
       <P Name="SimulationMode">normal</P>
@@ -908,6 +908,7 @@ __MWOPC_PART_BEGIN__ /simulink/graphicalInterface.xml
   <Outport Name="VehSpdRef">
     <P Name="BusObject"/>
     <P Name="BusOutputAsStruct">off</P>
+    <P Name="SignalName">Speed Reference</P>
     <P Name="UnitExpr">km/h</P>
     <P Name="OutportClientType">off</P>
   </Outport>
@@ -973,8 +974,8 @@ __MWOPC_PART_BEGIN__ /simulink/hdlParams.xml
 __MWOPC_PART_BEGIN__ /simulink/modelDictionary.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2023a_20220628">
-  <System type="System" uuid="6a16922f-3d46-4f53-a6d4-32682e755ad2">
-    <Interface type="Interface" uuid="69fc17db-0f2d-4e5b-92d2-84cb28f3ac9a"/>
+  <System type="System" uuid="a033a18a-5845-4871-bda1-a2984bf768dc">
+    <Interface type="Interface" uuid="3ba1d81d-20c7-48a2-a864-3e153bab08e4"/>
   </System>
 </MF0>
 __MWOPC_PART_BEGIN__ /simulink/modelMask.xml
@@ -1235,10 +1236,10 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
 <System>
   <P Name="Location">[42, 154, 1182, 794]</P>
   <P Name="ReportName">simulink-default.rpt</P>
-  <P Name="SIDHighWatermark">55331</P>
+  <P Name="SIDHighWatermark">55344</P>
   <Block BlockType="SubSystem" Name="Constant" SID="809">
     <PortCounts out="1"/>
-    <P Name="Position">[250, 171, 325, 199]</P>
+    <P Name="Position">[270, 391, 345, 419]</P>
     <P Name="ZOrder">26304</P>
     <P Name="ContentPreviewEnabled">on</P>
     <Mask>
@@ -1327,9 +1328,18 @@ update(sig)
     </Mask>
     <System Ref="system_809"/>
   </Block>
+  <Block BlockType="Derivative" Name="Derivative" SID="55344">
+    <P Name="Position">[680, 385, 710, 415]</P>
+    <P Name="ZOrder">26307</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">Speed Reference Derivative</P>
+      </Port>
+    </PortProperties>
+  </Block>
   <Block BlockType="Reference" Name="Drive Cycle Source 1" SID="10">
     <PortCounts out="1"/>
-    <P Name="Position">[0, -58, 125, 28]</P>
+    <P Name="Position">[-10, 112, 115, 198]</P>
     <P Name="ZOrder">26223</P>
     <P Name="HideAutomaticName">off</P>
     <P Name="AttributesFormatString">%&lt;cycleVar&gt; (%&lt;tfinal&gt;)</P>
@@ -1386,7 +1396,7 @@ update(sig)
   </Block>
   <Block BlockType="Reference" Name="Drive Cycle Source 2" SID="52327">
     <PortCounts out="1"/>
-    <P Name="Position">[0, 92, 125, 178]</P>
+    <P Name="Position">[-10, 247, 115, 333]</P>
     <P Name="ZOrder">26305</P>
     <P Name="HideAutomaticName">off</P>
     <P Name="AttributesFormatString">%&lt;cycleVar&gt; (%&lt;tfinal&gt;)</P>
@@ -1401,13 +1411,13 @@ update(sig)
       <P Name="RTWMemSecDataInternal">Inherit from model</P>
       <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
-      <P Name="cycleVar">FTP75</P>
+      <P Name="cycleVar">JC08</P>
       <P Name="fileVar">cycleFTP75.mat</P>
-      <P Name="tfinal">2474  seconds</P>
+      <P Name="tfinal">1204  seconds</P>
       <P Name="cycleRepeat">off</P>
       <P Name="outAccPort">off</P>
       <P Name="outGearPort">off</P>
-      <P Name="gearList">No gear data</P>
+      <P Name="gearList">SFT_A</P>
       <P Name="t_wot1">5</P>
       <P Name="xdot_woto">0</P>
       <P Name="xdot_wot1">30</P>
@@ -1433,7 +1443,7 @@ update(sig)
       <P Name="traceOption">off</P>
       <P Name="dtTrace">1</P>
       <P Name="traceWindow">10</P>
-      <P Name="lastDCname">FTP75</P>
+      <P Name="lastDCname">JC08</P>
       <P Name="lastOutUnit">mph</P>
       <P Name="lastDT">0</P>
       <P Name="lastTB">1</P>
@@ -1443,7 +1453,7 @@ update(sig)
   </Block>
   <Block BlockType="SubSystem" Name="High speed drive pattern" SID="805">
     <PortCounts out="1"/>
-    <P Name="Position">[250, 21, 325, 49]</P>
+    <P Name="Position">[250, 91, 325, 119]</P>
     <P Name="ZOrder">26303</P>
     <P Name="ContentPreviewEnabled">on</P>
     <Mask>
@@ -1610,16 +1620,29 @@ update(sig)
   </Block>
   <Block BlockType="MultiPortSwitch" Name="Multiport&#xA;Switch" SID="11">
     <PortCounts in="6" out="1"/>
-    <P Name="Position">[430, -85, 480, 205]</P>
+    <P Name="Position">[430, -85, 490, 445]</P>
     <P Name="ZOrder">26295</P>
     <P Name="HideAutomaticName">off</P>
     <P Name="Inputs">5</P>
     <P Name="InputSameDT">off</P>
     <P Name="SaturateOnIntegerOverflow">off</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">Speed Reference</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Scope" Name="Scope" SID="55332">
+    <PortCounts in="2"/>
+    <P Name="Position">[880, 303, 1020, 432]</P>
+    <P Name="ZOrder">26306</P>
+    <P Name="ScopeSpecificationString">Simulink.scopes.TimeScopeBlockCfg(&apos;CurrentConfiguration&apos;, extmgr.ConfigurationSet(extmgr.Configuration(&apos;Core&apos;,&apos;General UI&apos;,true),extmgr.Configuration(&apos;Core&apos;,&apos;Source UI&apos;,true),extmgr.Configuration(&apos;Sources&apos;,&apos;WiredSimulink&apos;,true,&apos;DataLoggingVariableName&apos;,&apos;ScopeData2&apos;),extmgr.Configuration(&apos;Visuals&apos;,&apos;Time Domain&apos;,true,&apos;SerializedDisplays&apos;,{struct(&apos;MinYLimReal&apos;,&apos;-6.19597&apos;,&apos;MaxYLimReal&apos;,&apos;55.76377&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos;0.00000&apos;,&apos;MaxYLimMag&apos;,&apos;55.76377&apos;,&apos;LegendVisibility&apos;,&apos;off&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],&apos;Title&apos;,&apos;%&lt;SignalLabel&gt;&apos;,&apos;LinePropertiesCache&apos;,{{}},&apos;UserDefinedChannelNames&apos;,{{}},&apos;NumLines&apos;,1,&apos;LineNames&apos;,{{&apos;Multiport Switch&apos;}},&apos;ShowContent&apos;,true,&apos;Placement&apos;,1)},&apos;DisplayPropertyDefaults&apos;,struct(&apos;MinYLimReal&apos;,&apos;-6.19597&apos;,&apos;MaxYLimReal&apos;,&apos;55.76377&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos;0.00000&apos;,&apos;MaxYLimMag&apos;,&apos;55.76377&apos;,&apos;LegendVisibility&apos;,&apos;off&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration(&apos;Tools&apos;,&apos;Plot Navigation&apos;,true),extmgr.Configuration(&apos;Tools&apos;,&apos;Measurements&apos;,true,&apos;Version&apos;,&apos;2023a&apos;)),&apos;Version&apos;,&apos;2023a&apos;,&apos;Position&apos;,[844 479 560 420])</P>
+    <P Name="NumInputPorts">2</P>
+    <P Name="Floating">off</P>
   </Block>
   <Block BlockType="SubSystem" Name="Simple drive pattern" SID="801">
     <PortCounts out="1"/>
-    <P Name="Position">[250, -29, 325, -1]</P>
+    <P Name="Position">[250, 16, 325, 44]</P>
     <P Name="ZOrder">26300</P>
     <P Name="ContentPreviewEnabled">on</P>
     <Mask>
@@ -1709,50 +1732,80 @@ update(sig)
     <System Ref="system_801"/>
   </Block>
   <Block BlockType="Constant" Name="Simulation Case" SID="1">
-    <P Name="Position">[360, -80, 390, -50]</P>
+    <P Name="Position">[20, -60, 50, -30]</P>
     <P Name="ZOrder">26296</P>
+    <P Name="Value">4</P>
   </Block>
   <Block BlockType="Outport" Name="VehSpdRef" SID="12">
-    <P Name="Position">[545, 53, 575, 67]</P>
+    <P Name="Position">[670, 173, 700, 187]</P>
     <P Name="ZOrder">26224</P>
     <P Name="AttributesFormatString">%&lt;Unit&gt;</P>
     <P Name="Unit">km/h</P>
   </Block>
   <Line>
-    <P Name="ZOrder">268</P>
+    <P Name="ZOrder">378</P>
     <P Name="Src">10#out:1</P>
-    <P Name="Points">[50, 0; 0, 100]</P>
+    <P Name="Points">[266, 0; 0, 70]</P>
     <P Name="Dst">11#in:4</P>
   </Line>
   <Line>
-    <P Name="ZOrder">269</P>
+    <P Name="ZOrder">379</P>
     <P Name="Src">805#out:1</P>
+    <P Name="Points">[63, 0; 0, 30]</P>
     <P Name="Dst">11#in:3</P>
   </Line>
   <Line>
-    <P Name="ZOrder">270</P>
+    <P Name="ZOrder">380</P>
     <P Name="Src">801#out:1</P>
+    <P Name="Points">[74, 0; 0, 15]</P>
     <P Name="Dst">11#in:2</P>
   </Line>
   <Line>
-    <P Name="ZOrder">271</P>
+    <P Name="ZOrder">381</P>
     <P Name="Src">1#out:1</P>
     <P Name="Dst">11#in:1</P>
   </Line>
   <Line>
-    <P Name="ZOrder">272</P>
+    <P Name="Name">Speed Reference</P>
+    <P Name="ZOrder">386</P>
     <P Name="Src">11#out:1</P>
-    <P Name="Dst">12#in:1</P>
+    <P Name="Points">[68, 0]</P>
+    <Branch>
+      <P Name="ZOrder">385</P>
+      <P Name="Points">[0, 155; 27, 0]</P>
+      <Branch>
+        <P Name="ZOrder">384</P>
+        <P Name="Labels">[1, 1]</P>
+        <P Name="Dst">55332#in:1</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">383</P>
+        <P Name="Points">[0, 65]</P>
+        <P Name="Dst">55344#in:1</P>
+      </Branch>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">382</P>
+      <P Name="Dst">12#in:1</P>
+    </Branch>
   </Line>
   <Line>
-    <P Name="ZOrder">273</P>
+    <P Name="ZOrder">387</P>
     <P Name="Src">809#out:1</P>
     <P Name="Dst">11#in:6</P>
   </Line>
   <Line>
-    <P Name="ZOrder">274</P>
+    <P Name="ZOrder">388</P>
     <P Name="Src">52327#out:1</P>
+    <P Name="Points">[247, 0; 0, 25]</P>
     <P Name="Dst">11#in:5</P>
+  </Line>
+  <Line>
+    <P Name="Name">Speed Reference Derivative</P>
+    <P Name="ZOrder">389</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">55344#out:1</P>
+    <P Name="Dst">55332#in:2</P>
   </Line>
   <Annotation SID="52328">
     <P Name="Name">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1763,21 +1816,10 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;left&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;in Drive Cycle Source block&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;left&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;requires the license of&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;left&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14px;&quot;&gt;Powertrain Block Set.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</P>
-    <P Name="Position">[-241, 29, -58, 95]</P>
+    <P Name="Position">[-240, 202, -57, 260]</P>
     <P Name="InternalMargins">[0, 0, 0, 0]</P>
     <P Name="Interpreter">rich</P>
-    <P Name="ZOrder">-1516</P>
-  </Annotation>
-  <Annotation SID="13">
-    <P Name="Name">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body align=&quot;left&quot; style=&quot; font-family:&apos;Helvetica&apos;; font-size:10px; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;left&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:12px;&quot;&gt;Copyright 2023 The MathWorks, Inc.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</P>
-    <P Name="Position">[65, 232, 261, 248]</P>
-    <P Name="InternalMargins">[0, 0, 0, 0]</P>
-    <P Name="Interpreter">rich</P>
-    <P Name="ZOrder">-1517</P>
+    <P Name="ZOrder">-24</P>
   </Annotation>
   <Connector>
     <P Name="Annotation">52328</P>
@@ -1854,7 +1896,7 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
       <Array PropName="PersistedApps" Type="Cell" Dimension="0*1"/>
       <P Name="WindowUuid" Class="char">8bc14801-6706-4a24-a221-00273b187e76</P>
     </Object>
-    <P Name="BDUuid" Class="char">6b33375a-ac63-41e0-9ca1-3096cebaeb00</P>
+    <P Name="BDUuid" Class="char">2c9cd349-d29a-485a-9a60-2acd050b66c9</P>
   </Object>
 </WindowsInfo>
 
