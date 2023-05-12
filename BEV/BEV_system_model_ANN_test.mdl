@@ -48,8 +48,8 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
   <dc:description>Battery Electric Vehicle drive cycle simulation
 </dc:description>
   <cp:lastModifiedBy>antaeug</cp:lastModifiedBy>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-05-11T15:02:13Z</dcterms:modified>
-  <cp:revision>7.40</cp:revision>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-05-12T07:52:37Z</dcterms:modified>
+  <cp:revision>7.41</cp:revision>
   <cp:version>R2023a</cp:version>
 </cp:coreProperties>
 
@@ -149,7 +149,7 @@ defineBus_Rotational
     <ConfigManagerSettings>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="ModelVersionFormat">%&lt;AutoIncrement:7.40&gt;</P>
+      <P Name="ModelVersionFormat">%&lt;AutoIncrement:7.41&gt;</P>
     </ConfigManagerSettings>
     <EditorSettings>
       <P Name="ShowEditTimeWarnings">off</P>
